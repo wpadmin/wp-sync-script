@@ -103,7 +103,7 @@ check_dependencies() {
     # Проверка наличия ssh
     if ! command -v ssh &> /dev/null; then
         error "ssh не установлен. Установите его с помощью: sudo apt-get install openssh-client"
-    }
+    fi  # <-- This was the issue: } instead of fi
     
     # Проверка соединения с удаленным сервером
     info "Проверка подключения к удаленному серверу..."
